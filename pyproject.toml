@@ -10,6 +10,19 @@ packages = [{include = "notas_musicais"}]
 python = "^3.11"
 
 
+[tool.poetry.group.dev.dependencies]
+pytest = "^7.2.1"
+pytest-cov = "^4.0.0"
+blue = "^0.9.1"
+isort = "^5.11.4"
+taskipy = "^1.10.3"
+
+
+[tool.poetry.group.doc.dependencies]
+mkdocs-material = "^9.0.5"
+mkdocstrings = "^0.19.1"
+mkdocstrings-python = "^0.8.3"
+
 [build-system]
 requires = ["poetry-core"]
 build-backend = "poetry.core.masonry.api"
