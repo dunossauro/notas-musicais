@@ -1,0 +1,13 @@
+name: Pipeline
+on: [push, pull_request]
+
+jobs:
+  test:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Roda um comando!
+        run: echo $(pwd)
+
+      - name: Roda outro comando!
+        run: echo $(ls)
