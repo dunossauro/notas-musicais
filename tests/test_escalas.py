@@ -67,7 +67,7 @@ def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):
 def test_deve_retornar_os_sete_graus():
     tonica = 'c'
     tonalidade = 'maior'
-    esperado = ['I', 'II', 'IIII', 'IV', 'V', 'VI', 'VII']
+    esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
 
     resultado = escala(tonica, tonalidade)
 
