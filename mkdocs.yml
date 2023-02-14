@@ -37,4 +37,4 @@ plugins:
 
 extra:
   commands:
-    run: poetry run notas-musicais
+    run: notas-musicais
