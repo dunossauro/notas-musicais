@@ -152,7 +152,7 @@ poetry install
 ### Como executar o CLI
 
 ```bash
-{{ commands.run }} [subcomando]
+poetry run notas-musicais [subcomando]
 ```
 
 ### Como executar a verificação de código
