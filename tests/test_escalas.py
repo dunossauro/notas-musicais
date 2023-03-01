@@ -54,9 +54,18 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
         ('C', 'maior', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
         ('C#', 'maior', ['C#', 'D#', 'F', 'F#', 'G#', 'A#', 'C']),
         ('F', 'maior', ['F', 'G', 'A', 'A#', 'C', 'D', 'E']),
+
         ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
         ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
         ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
+
+        ('C', 'menor-harmonica', ['C', 'D', 'D#', 'F', 'G', 'G#', 'B']),
+        ('C#', 'menor-harmonica', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'C']),
+        ('F', 'menor-harmonica', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'E']),
+
+        ('C', 'menor-melodica', ['C', 'D', 'D#', 'F', 'G', 'A', 'B']),
+        ('C#', 'menor-melodica', ['C#', 'D#', 'E', 'F#', 'G#', 'A#', 'C']),
+        ('F', 'menor-melodica', ['F', 'G', 'G#', 'A#', 'C', 'D', 'E']),
     ],
 )
 def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):

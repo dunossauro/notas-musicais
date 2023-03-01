@@ -35,7 +35,12 @@ As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter 
 ```
 """
 NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
-ESCALAS = {'maior': (0, 2, 4, 5, 7, 9, 11), 'menor': (0, 2, 3, 5, 7, 8, 10)}
+ESCALAS = {
+    'maior': (0, 2, 4, 5, 7, 9, 11),
+    'menor': (0, 2, 3, 5, 7, 8, 10),
+    'menor-harmonica': (0, 2, 3, 5, 7, 8, 11),
+    'menor-melodica': (0, 2, 3, 5, 7, 9, 11),
+}
 
 
 def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
