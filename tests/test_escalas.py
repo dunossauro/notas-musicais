@@ -53,9 +53,12 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
     [
         ('C', 'maior', ['C', 'D', 'E', 'F', 'G', 'A', 'B']),
         ('C#', 'maior', ['C#', 'D#', 'F', 'F#', 'G#', 'A#', 'C']),
+        ('Db', 'maior', ['Db', 'Eb', 'F', 'Gb', 'Ab', 'Bb', 'C']),
         ('F', 'maior', ['F', 'G', 'A', 'A#', 'C', 'D', 'E']),
+
         ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
         ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
+        ('Db', 'menor', ['Db', 'Eb', 'E', 'Gb', 'Ab', 'A', 'B']),
         ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
     ],
 )

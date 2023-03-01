@@ -25,16 +25,19 @@ tip: Dica!
 
 # NOTAS
 
-As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter somente as notas no formato Natural e o Sustenido (#) para a simplificação do fluxo de trabalho. Embora não esteja totalmente correto. Para ver as 12 notas você pode:
+As notas estão sendo definidas em uma contasnte `NOTAS`. Para ver as 12 notas você pode:
 
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import NOTAS
 >>> NOTAS
-['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B']
+['C', 'C#', 'Db', 'D', 'D#', 'Eb', 'E', 'F', 'F#', 'Gb', 'G', 'G#', 'Ab', 'A', 'A#', 'Bb', 'B']
 
 ```
 """
-NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
+NOTAS = 'C C# Db D D# Eb E F F# Gb G G# Ab A A# Bb B'.split()
+NOTAS_COM_SUSTENIDO = 'C C# D D# E F F# G G# A A# B'.split()
+NOTAS_COM_BEMOL = 'C Db D Eb E F Gb G Ab A Bb B'.split()
+
 ESCALAS = {'maior': (0, 2, 4, 5, 7, 9, 11), 'menor': (0, 2, 3, 5, 7, 8, 10)}
 
 
@@ -60,12 +63,22 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         >>> escala('a', 'menor')
         {'notas': ['A', 'B', 'C', 'D', 'E', 'F', 'G'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
     """
+
     tonica = tonica.upper()
+    notas = NOTAS_COM_SUSTENIDO
+
+    if len(tonica) > 1:
+        tonica = tonica[0] + tonica[1].lower()
+        if tonica[1] == 'b':
+            notas = NOTAS_COM_BEMOL
+
     try:
         intervalos = ESCALAS[tonalidade]
-        tonica_pos = NOTAS.index(tonica)
+        tonica_pos = notas.index(tonica)
     except ValueError:
-        raise ValueError(f'Essa nota não existe, tente uma dessas {NOTAS}')
+        raise ValueError(
+            f'Essa nota não existe, tente uma dessas {NOTAS}'
+        )
     except KeyError:
         raise KeyError(
             'Essa escala não existe ou não foi implementada. '
@@ -76,6 +89,6 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
 
     for intervalo in intervalos:
         nota = (tonica_pos + intervalo) % 12
-        temp.append(NOTAS[nota])
+        temp.append(notas[nota])
 
     return {'notas': temp, 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
