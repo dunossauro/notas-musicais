@@ -184,4 +184,4 @@ Caso não tenha encontrado o que precisa, você pode abrir uma [issue no projeto
 
 ## Melhoria contínua
 
-Esse documento pode ser melhorado por qualquer pessoa que tenha interesse em melhora-lo. Então, sinta-se a vontade para fornecer mais dicas as pessoas que desejam contribuir também :heart:
+Esse documento pode ser melhorado por qualquer pessoa que tenha interesse em melhorá-lo. Então, sinta-se à vontade para fornecer mais dicas às pessoas que desejam contribuir também ❤️❤️
