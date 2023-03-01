@@ -86,14 +86,15 @@ solve-conflict: guard-destiny guard-working
 # =================================================================
 
 install:
-	echo -e "${Green}Installing Python 3.11.1${Color_Off}";
-	pyenv install 3.11.1 ;
-	echo -e "${Green}Activating local environment${Color_Off}";
-	pyenv local 3.11.1 ;
-	echo -e "${Green}Installing poetry on pyenv version${Color_Off}";
+	echo -e "${Green}🐍🐍 Installing Python 3.11.1 🐍🐍${Color_Off}";
+	pyenv install 3.11.1;
+	echo -e "${Green}⏯️⏯️ Activating local environment ⏯️⏯️${Color_Off}";
+	pyenv local 3.11.1;
+	echo -e "${Green}📜📜 Installing poetry with pyenv version 📜📜${Color_Off}";
 	pip3 install poetry;
-	echo -e "${Green}Installing dependencies${Color_Off}";
+	echo -e "${Green}🚸🚸 Installing dependencies 🚸🚸${Color_Off}";
 	poetry install;
-	echo -e "${Green}Spawning poetry shell${Color_Off}";
+	echo -e "${Green}🐚🐚 Spawning poetry shell 🐚🐚${Color_Off}";
 	poetry shell;
+	echo -e "${Green}✨✨ All Done ✨✨${Color_Off}";
 
