@@ -82,7 +82,7 @@ solve-conflict: guard-destiny guard-working
 	git branch
 
 # =================================================================
-# Installation and configuration
+# Installation, configuration and running
 # =================================================================
 
 install:
@@ -98,3 +98,5 @@ install:
 	poetry shell;
 	echo -e "${Green}✨✨ All Done ✨✨${Color_Off}";
 
+run: guard-arg
+	poetry run notas-musicais ${arg}
