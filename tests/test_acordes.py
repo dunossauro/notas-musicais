@@ -22,7 +22,18 @@ C    E    G
         ('C°', ['C', 'D#', 'F#']),
         ('C+', ['C', 'E', 'G#']),
         ('Cm+', ['C', 'D#', 'G#']),
+
         ('F#', ['F#', 'A#', 'C#']),
+        ('F#m', ['F#', 'A', 'C#']),
+        ('F#°', ['F#', 'A', 'C']),
+        ('F#+', ['F#', 'A#', 'D']),
+        ('F#m+', ['F#', 'A', 'D']),
+
+        ('Gb', ['Gb', 'Bb', 'Db']),
+        ('Gbm', ['Gb', 'A', 'Db']),
+        ('Gb°', ['Gb', 'A', 'C']),
+        ('Gb+', ['Gb', 'Bb', 'D']),
+        ('Gbm+', ['Gb', 'A', 'D']),
     ],
 )
 def test_acorde_deve_retornar_as_notas_correspondentes(nota, esperado):

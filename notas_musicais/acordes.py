@@ -3,7 +3,12 @@ Módulo de acordes.
 
 O módulo de acordes conta com funções e ferramentas necessárias para a geração de acordes.
 """
-from notas_musicais.escalas import NOTAS, escala
+from notas_musicais.escalas import (
+    NOTAS,
+    NOTAS_COM_BEMOL,
+    NOTAS_COM_SUSTENIDO,
+    escala
+)
 
 
 def _menor(cifra):
@@ -39,9 +44,19 @@ def semitom(nota: str, *, intervalo: int) -> str:
         >>> semitom('c', intervalo=-1)
         'B'
     """
-    pos = NOTAS.index(nota.upper()) + intervalo
+    if len(nota) == 1:
+        nota = nota.upper()
+    else:
+        nota = nota[0].upper() + nota[1].lower()
 
-    return NOTAS[pos % 12]
+    try:
+        pos = NOTAS_COM_SUSTENIDO.index(nota) + intervalo
+        notas = NOTAS_COM_SUSTENIDO
+    except ValueError:
+        pos = NOTAS_COM_BEMOL.index(nota) + intervalo
+        notas = NOTAS_COM_BEMOL
+
+    return notas[pos % 12]
 
 
 def triade(nota, tonalidade) -> list[str]:
