@@ -57,6 +57,10 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
         ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
         ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
         ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
+        ('C', 'pentatonica-menor', ['C', 'D#', 'F', 'G', 'A#']),
+        ('C', 'pentatonica-maior', ['C', 'D', 'E', 'G', 'A']),
+        ('B', 'pentatonica-menor', ['B', 'D', 'E', 'F#', 'A']),
+        ('B', 'pentatonica-maior', ['B', 'C#', 'D#', 'F#', 'G#']),
     ],
 )
 def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):
@@ -68,6 +72,26 @@ def test_deve_retornar_os_sete_graus():
     tonica = 'c'
     tonalidade = 'maior'
     esperado = ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']
+
+    resultado = escala(tonica, tonalidade)
+
+    assert resultado['graus'] == esperado
+
+
+def test_graus_pentatonica_maior():
+    tonica = 'c'
+    tonalidade = 'pentatonica-maior'
+    esperado = ['I', 'II', 'III', 'V', 'VI']
+
+    resultado = escala(tonica, tonalidade)
+
+    assert resultado['graus'] == esperado
+
+
+def test_graus_pentatonica_menor():
+    tonica = 'c'
+    tonalidade = 'pentatonica-menor'
+    esperado = ['I', 'III', 'IV', 'V', 'VII']
 
     resultado = escala(tonica, tonalidade)
 
