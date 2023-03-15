@@ -9,7 +9,7 @@ Toda a aplicação é baseada em um comando chamado `notas-musicais`. Esse coman
 
 {% include "templates/instalacao.md" %}
 
-## como usar?
+## Como usar?
 
 ### Escalas
 
