@@ -38,7 +38,7 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
     tonalidade = 'tonalidade'
 
     mensagem_de_erro = (
-        'Essa escala não existe ou não foi implementada. '
+        'Essa escala não existe ou não foi implementada ainda. '
         f'Tente uma dessas {list(ESCALAS.keys())}'
     )
 
@@ -57,6 +57,21 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
         ('C', 'menor', ['C', 'D', 'D#', 'F', 'G', 'G#', 'A#']),
         ('C#', 'menor', ['C#', 'D#', 'E', 'F#', 'G#', 'A', 'B']),
         ('F', 'menor', ['F', 'G', 'G#', 'A#', 'C', 'C#', 'D#']),
+        (
+            'C',
+            'cromatica',
+            ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'],
+        ),
+        (
+            'C#',
+            'cromatica',
+            ['C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C'],
+        ),
+        (
+            'D',
+            'cromatica',
+            ['D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B', 'C', 'C#'],
+        ),
     ],
 )
 def test_deve_retornar_as_notas_corretas(tonica, tonalidade, esperado):

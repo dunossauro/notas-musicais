@@ -33,7 +33,7 @@ Os exemplos usados na docstring também estão sendo usados para testes. Então,
 
 #### Sobre a biblioteca
 
-Toda a biblioteca usa python puro, ela não tem nenhuma dependência de bibliotecas externas. Isso é proposital, pois o código é bastante simples. As respostas das funções foram padronizadas com o retorno sempre sendo um dicionário python, pois em algum momento alguém pode querer expandir isso para uma interface gráfica ou usar em um API REST, dessa forma, acredito que um padrão que pode ser serealizado, pode ajudar bastante as pessoas.
+Toda a biblioteca usa python puro, ela não tem nenhuma dependência de bibliotecas externas. Isso é proposital, pois o código é bastante simples. As respostas das funções foram padronizadas com o retorno sempre sendo um dicionário python, pois em algum momento alguém pode querer expandir isso para uma interface gráfica ou usar em um API REST, dessa forma, acredito que um padrão que pode ser serializado, pode ajudar bastante as pessoas.
 
 Todas as vezes em que o código é consumido entre funções, durante a construção da aplicação foi criado um padrão para desempacotar o dicionário em outras funções. Então, não se preocupe se ver muito esse formato de código:
 

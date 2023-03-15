@@ -7,7 +7,7 @@ Attributes:
 
 # ESCALAS
 
-A escalas estão implementadas em uma constande chamada `ESCALAS`. Que é um dicionário onde as chaves são as escalas. Se quiser ver todas as escalas implementadas pode usar:
+A escalas estão implementadas em uma constante chamada `ESCALAS`. Que é um dicionário onde as chaves são as escalas. Se quiser ver todas as escalas implementadas pode usar:
 
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import ESCALAS
@@ -25,7 +25,7 @@ tip: Dica!
 
 # NOTAS
 
-As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter somente as notas no formato Natural e o Sustenido (#) para a simplificação do fluxo de trabalho. Embora não esteja totalmente correto. Para ver as 12 notas você pode:
+As notas estão sendo definidas em uma constante `NOTAS`. Foi optado por manter somente as notas no formato Natural e o Sustenido (#) para a simplificação do fluxo de trabalho. Embora não esteja totalmente correto. Para ver as 12 notas você pode:
 
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import NOTAS
@@ -35,16 +35,20 @@ As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter 
 ```
 """
 NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
-ESCALAS = {'maior': (0, 2, 4, 5, 7, 9, 11), 'menor': (0, 2, 3, 5, 7, 8, 10)}
+ESCALAS = {
+    'maior': (0, 2, 4, 5, 7, 9, 11),
+    'menor': (0, 2, 3, 5, 7, 8, 10),
+    'cromatica': (0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11),
+}
 
 
 def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
     """
-    Gera uma escala apartir de uma tônica e uma tonalidade.
+    Gera uma escala a partir de uma tônica e uma tonalidade.
 
     Args:
         tonica: Nota que será a tônica da escala
-        tonalidade: Tonialidade da escala
+        tonalidade: Tonalidade da escala
 
     Returns:
         Um dicionário com as notas da escala e os graus.
@@ -68,7 +72,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         raise ValueError(f'Essa nota não existe, tente uma dessas {NOTAS}')
     except KeyError:
         raise KeyError(
-            'Essa escala não existe ou não foi implementada. '
+            'Essa escala não existe ou não foi implementada ainda. '
             f'Tente uma dessas {list(ESCALAS.keys())}'
         )
 
