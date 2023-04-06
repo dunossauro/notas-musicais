@@ -2,7 +2,7 @@
 
 # Notas musicais
 [![Documentation Status](https://readthedocs.org/projects/notas-musicais/badge/?version=latest)](https://notas-musicais.readthedocs.io/en/latest/?badge=latest)
-![CI](https://github.com/dunossauro/notas-musicais/actions/workflows/pipeline.yaml/badge.svg)
+[![CI](https://github.com/dunossauro/notas-musicais/actions/workflows/pipeline.yaml/badge.svg)](https://github.com/dunossauro/notas-musicais/actions/workflows/pipeline.yaml)
 [![codecov](https://codecov.io/gh/dunossauro/notas-musicais/branch/main/graph/badge.svg?token=OVQQF4IQY2)](https://codecov.io/gh/dunossauro/notas-musicais)
 
 Notas musicais é um CLI para ajudar na formação de escalas, acordes e campos harmônicos.
