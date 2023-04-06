@@ -7,7 +7,7 @@ Attributes:
 
 # ESCALAS
 
-A escalas estão implementadas em uma constande chamada `ESCALAS`. Que é um dicionário onde as chaves são as escalas. Se quiser ver todas as escalas implementadas pode usar:
+As escalas estão implementadas em uma constante chamada `ESCALAS`. Que é um dicionário onde as chaves são os nomes das escalas. Se quiser ver todas as escalas implementadas pode usar:
 
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import ESCALAS
@@ -25,7 +25,7 @@ tip: Dica!
 
 # NOTAS
 
-As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter somente as notas no formato Natural e o Sustenido (#) para a simplificação do fluxo de trabalho. Embora não esteja totalmente correto. Para ver as 12 notas você pode:
+As notas estão sendo definidas em uma constante `NOTAS`. Foi optado por menter somente as notas no formato Natural e o Sustenido (#) para a simplificação do fluxo de trabalho. Embora não esteja totalmente correto. Para ver as 12 notas você pode:
 
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import NOTAS
