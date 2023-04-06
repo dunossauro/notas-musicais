@@ -23,7 +23,7 @@ Embora isso seja somente uma recomendação! Você também pode instalar o proje
 pip install notas-musicais
 ```
 
-## como usar?
+## Como usar?
 
 ### Escalas
 
