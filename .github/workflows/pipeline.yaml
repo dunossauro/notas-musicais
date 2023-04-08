@@ -4,7 +4,10 @@ on: [push, pull_request]
 jobs:
   test:
     runs-on: ubuntu-latest
-
+    strategy:
+      fail-fast: true
+      matrix:
+        version: ['3.10.9', '3.11.1', '3.11.3']
     steps:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v3
@@ -12,7 +15,7 @@ jobs:
       - name: Instalar o python
         uses: actions/setup-python@v4
         with:
-          python-version: '3.11.1'
+          python-version: ${{ matrix.version }}
 
       - name: Instalar Poetry
         run: pip install poetry

@@ -25,7 +25,7 @@ classifiers = [
 notas-musicais = "notas_musicais.cli:app"
 
 [tool.poetry.dependencies]
-python = "^3.11"
+python = "^3.10"
 typer = "^0.7.0"
 rich = "^13.2.0"
 
