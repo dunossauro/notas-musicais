@@ -8,14 +8,15 @@ jobs:
     steps:
       - name: Copia os arquivos do repo
         uses: actions/checkout@v3
+      
+      - name: Instalar Poetry
+        run: pipx install poetry
 
       - name: Instalar o python
         uses: actions/setup-python@v4
         with:
           python-version: '3.11.1'
-
-      - name: Instalar Poetry
-        run: pip install poetry
+          cache: 'poetry'
 
       - name: Instalar dependências do projeto
         run: poetry install --without doc
