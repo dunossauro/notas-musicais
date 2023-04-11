@@ -42,6 +42,8 @@ def _converte_graus(cifra, grau):
         >>> _converte_graus('C°', 'I')
         'i°'
     """
+    grau = grau.upper()
+
     if 'm' in cifra:
         return grau.lower()
 

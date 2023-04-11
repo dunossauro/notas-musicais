@@ -12,7 +12,7 @@ A escalas estão implementadas em uma constande chamada `ESCALAS`. Que é um dic
 ```py title="No seu shell interativo"
 >>> from notas_musicais.escalas import ESCALAS
 >>> ESCALAS
-{'maior': (0, 2, 4, 5, 7, 9, 11), 'menor': (0, 2, 3, 5, 7, 8, 10)...}
+{'maior': ([0, 2, 4, 5, 7, 9, 11], ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']), 'menor': ([0, 2, 3, 5, 7, 8, 10], ['I', 'II', 'iii', 'IV', 'V', 'vi', 'vii']), 'menor-harmonica': ([0, 2, 3, 5, 7, 8, 11], ['I', 'II', 'iii', 'IV', 'V', 'vi', 'VII']), 'menor-melodica': ([0, 2, 3, 5, 7, 9, 11], ['I', 'II', 'iii', 'IV', 'V', 'VI', 'VII'])}
 
 ```
 
@@ -36,10 +36,10 @@ As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter 
 """
 NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
 ESCALAS = {
-    'maior': ((0, 2, 4, 5, 7, 9, 11), ('I', 'II', 'III', 'IV', 'V', 'VI', 'VIIM')),
-    'menor': ((0, 2, 3, 5, 7, 8, 10), ('I', 'II', 'IIIm', 'IV', 'V', 'VIm', 'VII')),
-    'menor-harmonica': ((0, 2, 3, 5, 7, 8, 11), ('I', 'II', 'IIIm', 'IV', 'V', 'VIm', 'VIIM')),
-    'menor-melodica': ((0, 2, 3, 5, 7, 9, 11), ('I', 'II', 'IIIm', 'IV', 'V', 'VI', 'VIIM')),
+    'maior': ([0, 2, 4, 5, 7, 9, 11], ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']),
+    'menor': ([0, 2, 3, 5, 7, 8, 10], ['I', 'II', 'iii', 'IV', 'V', 'vi', 'vii']),
+    'menor-harmonica': ([0, 2, 3, 5, 7, 8, 11], ['I', 'II', 'iii', 'IV', 'V', 'vi', 'VII']),
+    'menor-melodica': ([0, 2, 3, 5, 7, 9, 11], ['I', 'II', 'iii', 'IV', 'V', 'VI', 'VII']),
 }
 
 
@@ -63,7 +63,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         {'notas': ['C', 'D', 'E', 'F', 'G', 'A', 'B'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
 
         >>> escala('a', 'menor')
-        {'notas': ['A', 'B', 'C', 'D', 'E', 'F', 'G'], 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
+        {'notas': ['A', 'B', 'C', 'D', 'E', 'F', 'G'], 'graus': ['I', 'II', 'iii', 'IV', 'V', 'vi', 'vii']}
     """
     tonica = tonica.upper()
     try:
