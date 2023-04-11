@@ -36,10 +36,10 @@ As notas estão sendo definidas em uma contasnte `NOTAS`. Foi optado por menter 
 """
 NOTAS = 'C C# D D# E F F# G G# A A# B'.split()
 ESCALAS = {
-    'maior': (0, 2, 4, 5, 7, 9, 11),
-    'menor': (0, 2, 3, 5, 7, 8, 10),
-    'menor-harmonica': (0, 2, 3, 5, 7, 8, 11),
-    'menor-melodica': (0, 2, 3, 5, 7, 9, 11),
+    'maior': ((0, 2, 4, 5, 7, 9, 11), ('I', 'II', 'III', 'IV', 'V', 'VI', 'VIIM')),
+    'menor': ((0, 2, 3, 5, 7, 8, 10), ('I', 'II', 'IIIm', 'IV', 'V', 'VIm', 'VII')),
+    'menor-harmonica': ((0, 2, 3, 5, 7, 8, 11), ('I', 'II', 'IIIm', 'IV', 'V', 'VIm', 'VIIM')),
+    'menor-melodica': ((0, 2, 3, 5, 7, 9, 11), ('I', 'II', 'IIIm', 'IV', 'V', 'VI', 'VIIM')),
 }
 
 
@@ -67,7 +67,7 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
     """
     tonica = tonica.upper()
     try:
-        intervalos = ESCALAS[tonalidade]
+        intervalos, graus = ESCALAS[tonalidade]
         tonica_pos = NOTAS.index(tonica)
     except ValueError:
         raise ValueError(f'Essa nota não existe, tente uma dessas {NOTAS}')
@@ -83,4 +83,4 @@ def escala(tonica: str, tonalidade: str) -> dict[str, list[str]]:
         nota = (tonica_pos + intervalo) % 12
         temp.append(NOTAS[nota])
 
-    return {'notas': temp, 'graus': ['I', 'II', 'III', 'IV', 'V', 'VI', 'VII']}
+    return {'notas': temp, 'graus': graus}
