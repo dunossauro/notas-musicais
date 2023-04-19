@@ -36,8 +36,8 @@ def test_acorde_cli_deve_conter_as_notas_na_resposta(nota):
 
 
 @mark.parametrize('grau', ['I', 'III', 'V'])
-def test_escala_cli_deve_conter_todos_os_graus(grau):
-    result = runner.invoke(app, ['escala', 'F'])
+def test_acorde_cli_deve_conter_todos_os_graus(grau):
+    result = runner.invoke(app, ['acorde', 'F'])
     assert grau in result.stdout
 
 
