@@ -29,7 +29,7 @@ def test_deve_retornar_um_erro_dizendo_que_a_nota_nao_existe():
 
     mensagem_de_erro = f'Essa nota não existe, tente uma dessas {NOTAS}'
 
-    with raises(ValueError, match=re.escape(mensagem_de_erro)) as error:
+    with raises(ValueError, match=re.escape(mensagem_de_erro)):
         escala(tonica, tonalidade)
 
 
@@ -42,7 +42,7 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
         f'Tente uma dessas {list(ESCALAS.keys())}'
     )
 
-    with raises(KeyError, match=re.escape(mensagem_de_erro)) as error:
+    with raises(KeyError, match=re.escape(mensagem_de_erro)):
         escala(tonica, tonalidade)
 
 
