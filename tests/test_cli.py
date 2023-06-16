@@ -1,6 +1,7 @@
 from pytest import mark
 from typer.testing import CliRunner
 
+from notas_musicais import __version__
 from notas_musicais.cli import app
 
 runner = CliRunner()
@@ -51,3 +52,8 @@ def test_campo_harmonico_cli_deve_conter_todos_os_graus(grau):
 def test_campo_harmonico_cli_deve_conter_todos_as_cifras(cifra):
     result = runner.invoke(app, ['campo-harmonico', 'C'])
     assert cifra in result.stdout
+
+
+def test_cli_version():
+    result = runner.invoke(app, ['--version'])
+    assert __version__ in result.stdout
