@@ -6,6 +6,8 @@ Arrumar - Agir - Garantir!
 """
 import re
 
+from notas_musicais.error import EscalaError, NotaError
+
 from pytest import mark, raises
 
 from notas_musicais.escalas import ESCALAS, NOTAS, escala
@@ -29,7 +31,7 @@ def test_deve_retornar_um_erro_dizendo_que_a_nota_nao_existe():
 
     mensagem_de_erro = f'Essa nota não existe, tente uma dessas {NOTAS}'
 
-    with raises(ValueError, match=re.escape(mensagem_de_erro)):
+    with raises(NotaError, match=re.escape(mensagem_de_erro)):
         escala(tonica, tonalidade)
 
 
@@ -42,7 +44,7 @@ def test_deve_retornar_um_erro_dizendo_que_a_escala_não_existe():
         f'Tente uma dessas {list(ESCALAS.keys())}'
     )
 
-    with raises(KeyError, match=re.escape(mensagem_de_erro)):
+    with raises(EscalaError, match=re.escape(mensagem_de_erro)):
         escala(tonica, tonalidade)
 
 
